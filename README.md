@@ -2,7 +2,7 @@
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Livonz/freemail-d1)
 
-一个基于 Cloudflare Workers + D1 + R2 构建的**开源临时邮箱服务**，支持邮件接收、发送、转发、用户管理等完整功能。
+一个基于 Cloudflare Workers + D1 构建的**开源临时邮箱服务**，支持邮件接收、发送、转发、用户管理等完整功能。
 
 **当前版本：V4.8** - 新增单个邮件转发和收藏功能
 
@@ -48,7 +48,7 @@
 | ✉️ **发件支持** | Resend API 集成 · 多域名密钥 · 批量发送 · 定时发送 · 发件记录 |
 | 👥 **用户管理** | 三层权限模型 · 用户/邮箱分配 · 邮箱单点登录 · 登录权限控制 |
 | 🎨 **现代界面** | 毛玻璃效果 · 响应式设计 · 移动端适配 · 列表/卡片视图 |
-| ⚡ **技术架构** | Cloudflare Workers · D1 数据库 · R2 存储 · Email Routing |
+| ⚡ **技术架构** | Cloudflare Workers · D1 数据库 · Email Routing |
 
 > 💡 邮箱用户自行修改密码功能默认关闭，如需开启请将 `mailbox.html` 第 77-80 行取消注释。
 
@@ -81,7 +81,7 @@
 <details>
 <summary><strong>V3.x</strong> - 用户管理与性能优化</summary>
 
-- V3.5：数据库查询优化、R2 存储完整 EML、移动端适配
+- V3.5：数据库查询优化、完整 EML 存储、移动端适配
 - V3.0：三层权限模型、用户管理后台、前端权限防护
 </details>
 
@@ -107,7 +107,6 @@
 | 变量名 | 说明 | 必需 |
 |--------|------|------|
 | TEMP_MAIL_DB | D1 数据库绑定 | 是 |
-| MAIL_EML | R2 存储桶绑定 | 是 |
 | MAIL_DOMAIN | 邮箱域名，多个用逗号分隔 | 是 |
 | ADMIN_PASSWORD | 严格管理员密码 | 是 |
 | ADMIN_NAME | 严格管理员用户名（默认 `admin`） | 否 |
@@ -186,7 +185,7 @@ wrangler d1 execute TEMP_MAIL_DB --command "SELECT * FROM mailboxes LIMIT 10"
 ## 注意事项
 
 - **静态资源缓存**：更新后在 Cloudflare 控制台 Purge Everything，浏览器强制刷新
-- **R2/D1 费用**：有免费额度限制，建议定期清理过期邮件
+- **D1 费用**：有免费额度限制，建议定期清理过期邮件
 - **安全**：生产环境务必修改默认的 `ADMIN_PASSWORD` 和 `JWT_TOKEN`
 
 ## Star History

@@ -450,8 +450,6 @@ curl "https://your.domain/api/session?admin_token=<JWT_TOKEN>"
     "subject": "邮件主题",
     "verification_code": "123456",
     "preview": "预览...",
-    "r2_bucket": "mail-eml",
-    "r2_object_key": "2024/01/01/test@example.com/xxx.eml",
     "received_at": "2024-01-01 12:00:00",
     "is_read": 0
   }
