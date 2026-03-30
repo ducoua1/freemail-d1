@@ -1,6 +1,6 @@
 # Freemail - 临时邮箱服务
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/idinging/freemail)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Livonz/freemail-d1)
 
 一个基于 Cloudflare Workers + D1 + R2 构建的**开源临时邮箱服务**，支持邮件接收、发送、转发、用户管理等完整功能。
 
@@ -209,3 +209,6 @@ wrangler d1 execute TEMP_MAIL_DB --command "SELECT * FROM mailboxes LIMIT 10"
 ## 许可证
 
 Apache-2.0 license
+=======
+# R1-freemail
+>>>>>>> a2dd707f94ca0ecd4154905213cf755e1a88fa74
